@@ -11,6 +11,7 @@ public class PlaceOrderHandler : IHandleMessages<PlaceOrder>
   public Task Handle(PlaceOrder message, IMessageHandlerContext context)
   {
     log.Info($"Received PlaceOrder, OrderId = {message.OrderId}");
-    return Task.CompletedTask;
+    var orderCreated = new OrderCreated() { OrderId = message.OrderId };
+    return context.Publish(orderCreated);
   }
 }

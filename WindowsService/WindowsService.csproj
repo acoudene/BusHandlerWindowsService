@@ -15,5 +15,10 @@
     <PackageReference Include="CliWrap" Version="3.6.3" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="7.0.0" />
+    <PackageReference Include="NServiceBus" Version="7.1.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusHandler\BusHandler.csproj" />
   </ItemGroup>
 </Project>

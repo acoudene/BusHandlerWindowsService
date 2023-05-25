@@ -29,7 +29,7 @@ internal class Program
 
           // Send the command to the local endpoint
           log.Info($"Sending PlaceOrder command, OrderId = {command.OrderId}");
-          await endpointInstance.SendLocal(command)
+          await endpointInstance.Send(command)
               .ConfigureAwait(false);
 
           break;
@@ -51,6 +51,7 @@ internal class Program
 
     var endpointConfiguration = new EndpointConfiguration(appName);
     var transport = endpointConfiguration.UseTransport<LearningTransport>();
+    transport.Routing().RouteToEndpoint(typeof(PlaceOrder), "SubscriberApp");
 
     var endpointInstance = await Endpoint.Start(endpointConfiguration)
         .ConfigureAwait(false);

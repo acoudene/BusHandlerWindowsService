@@ -11,6 +11,8 @@ using Microsoft.Extensions.Logging.Configuration;
 using Microsoft.Extensions.Logging.EventLog;
 using WindowsService;
 using CliWrap;
+using System.Net;
+using NServiceBus;
 
 const string ServiceName = ".NET Joke Service";
 
@@ -55,5 +57,16 @@ builder.Services.AddHostedService<WindowsBackgroundService>();
 builder.Logging.AddConfiguration(
     builder.Configuration.GetSection("Logging"));
 
+const string appName = "WindowsService";
+
+var endpointConfiguration = new EndpointConfiguration(appName);
+var transport = endpointConfiguration.UseTransport<LearningTransport>();
+
+var endpointInstance = await Endpoint.Start(endpointConfiguration)
+    .ConfigureAwait(false);
+
 IHost host = builder.Build();
 host.Run();
+
+await endpointInstance.Stop()
+    .ConfigureAwait(false);
