@@ -5,7 +5,13 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsService", "WindowsService\WindowsService.csproj", "{16550905-A91D-4E74-860D-056405BDC710}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusHandler", "BusHandler\BusHandler.csproj", "{22131B07-CDBE-47AA-80BB-5976ACCC1D1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusHandler", "BusHandler\BusHandler.csproj", "{22131B07-CDBE-47AA-80BB-5976ACCC1D1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublisherApp", "PublisherApp\PublisherApp.csproj", "{6A8F0F5B-6259-4B9B-991D-7C0FF08AB04D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Messages\Messages.csproj", "{7996388F-4C60-445A-9D1F-923D9348848A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubscriberApp", "SubscriberApp\SubscriberApp.csproj", "{CE23DEAA-1ADA-4611-83A2-39C3C1F19CCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{22131B07-CDBE-47AA-80BB-5976ACCC1D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22131B07-CDBE-47AA-80BB-5976ACCC1D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22131B07-CDBE-47AA-80BB-5976ACCC1D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A8F0F5B-6259-4B9B-991D-7C0FF08AB04D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A8F0F5B-6259-4B9B-991D-7C0FF08AB04D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A8F0F5B-6259-4B9B-991D-7C0FF08AB04D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A8F0F5B-6259-4B9B-991D-7C0FF08AB04D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7996388F-4C60-445A-9D1F-923D9348848A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7996388F-4C60-445A-9D1F-923D9348848A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7996388F-4C60-445A-9D1F-923D9348848A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7996388F-4C60-445A-9D1F-923D9348848A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE23DEAA-1ADA-4611-83A2-39C3C1F19CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE23DEAA-1ADA-4611-83A2-39C3C1F19CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE23DEAA-1ADA-4611-83A2-39C3C1F19CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE23DEAA-1ADA-4611-83A2-39C3C1F19CCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
