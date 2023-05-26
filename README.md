@@ -12,7 +12,7 @@ NServiceBus Handler hosted in a windows service calling business MFC C++ dlls.
 
 # Worflow visé
 
-![Messaging Workflow - from command to business library](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/94ca7c43-e8d3-4d04-9ac2-fe10ddab69e6)
+![Messaging Workflow - from command to business library ](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/3377e306-9f78-4d62-8ef7-211609dfddec)
 
 # Découpage
 
