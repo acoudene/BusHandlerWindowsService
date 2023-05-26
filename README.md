@@ -10,6 +10,10 @@ NServiceBus Handler hosted in a windows service calling business MFC C++ dlls.
 
 ![image](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/a309e18f-4733-4e5b-a131-a298bdcdccf9)
 
+# Worflow visé
+
+![Messaging Workflow - from command to business library ](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/51fab144-e514-4730-b8a4-c762175dbdc0)
+
 # Découpage
 
 La solution du prototype est découpée en 7 projets :
