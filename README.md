@@ -10,6 +10,8 @@ NServiceBus Handler hosted in a windows service calling business MFC C++ dlls.
 
 ![image](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/b27a58ea-f6d5-4b10-bdd6-432117a09a66)
 
+- Montrer qu'on peut continuer à faire de l'interop vers du C++ MFC via .Net 7 et un wrapper C++/CLI
+
 # Worflow visé
 
 ![Messaging Workflow - from command to business library  (1)](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/cc0ff13c-114a-4244-ab0d-b3db70e23297)
