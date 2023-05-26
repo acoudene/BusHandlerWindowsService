@@ -1,6 +1,6 @@
 # BusHandlerWindowsService
 
-NServiceBus Handler hosted in a windows service calling business MFC C++ dlls.
+Show Service Bus Handler (NServiceBus) hosted in a windows service and executable in .Net 7, which then, call business MFC C++ dlls.
 
 # Les objectifs
 
