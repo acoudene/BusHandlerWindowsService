@@ -3,7 +3,7 @@
 NServiceBus Handler hosted in a windows service
 
 Les objectifs :
--	Démontrer qu’on peut se brancher sur notre version de NServiceBus sous licence perpétuelle (version indiquée dans le TIB 212 : 7.1.6). Note : on ne peut pas prendre les versions récentes sans payer en locatif désormais et suivant le nombre de endpoints.
+-	Démontrer qu’on peut se brancher sur une version de NServiceBus sous licence perpétuelle (version : 7.1.6). Note : on ne peut pas prendre les versions récentes sans payer en locatif désormais et suivant le nombre de endpoints.
 -	Démontrer qu’on peut créer un service NT via .Net 7
 -	Montrer que l’exécutable fourni n’a pas besoin d’installer quoi que ce soit sur la cible, j’ai choisi de produire un exécutable unique incluant toutes les dlls nécessaires dont celles de .Net 7 (Mode de publication avec les options : Produce single file + Self-contained)
 
