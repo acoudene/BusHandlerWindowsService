@@ -8,7 +8,7 @@ NServiceBus Handler hosted in a windows service calling business MFC C++ dlls.
 -	Démontrer qu’on peut créer un service NT via .Net 7
 -	Montrer que l’exécutable fourni n’a pas besoin d’installer quoi que ce soit sur la cible, j’ai choisi de produire un exécutable unique incluant toutes les dlls nécessaires dont celles de .Net 7 (Mode de publication avec les options : Produce single file + Self-contained)
 
-![image](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/a309e18f-4733-4e5b-a131-a298bdcdccf9)
+![Messaging Workflow - from command to business library  (1)](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/cc0ff13c-114a-4244-ab0d-b3db70e23297)
 
 # Worflow visé
 
