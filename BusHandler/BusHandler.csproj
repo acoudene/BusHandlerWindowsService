@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Messages\Messages.csproj" />
+    <ProjectReference Include="..\WrapperBusinessLibrary\WrapperBusinessLibrary.vcxproj" />
   </ItemGroup>
 
 </Project>

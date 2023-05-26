@@ -4,7 +4,7 @@ using namespace System;
 
 namespace WrapperBusinessLibrary
 {
-  ref class WrapperBusinessClass
+  public ref class WrapperBusinessClass
   {
   public:
 
