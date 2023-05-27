@@ -1,6 +1,7 @@
 # BusHandlerWindowsService
 
 Show Service Bus Handler (NServiceBus) hosted in a windows service and executable in .Net 7, which then, call business MFC C++ dlls.
+Message management will be ensured by RabbitMQ (inside Docker container).
 
 # Les objectifs
 
@@ -11,6 +12,7 @@ Show Service Bus Handler (NServiceBus) hosted in a windows service and executabl
 ![image](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/b27a58ea-f6d5-4b10-bdd6-432117a09a66)
 
 - Montrer qu'on peut continuer à faire de l'interop vers du C++ MFC via .Net 7 et un wrapper C++/CLI
+- Appliquer RabbitMQ en dessous NServiceBus
 
 # Worflow visé
 
@@ -29,13 +31,35 @@ La solution du prototype est découpée en 7 projets :
 
 ![image](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/cb3d1df8-439d-47e7-828f-6fa3854898cf)
 
-# Debug
+# Test en Debug
 
 Pour tester, rien de plus simple, faire simplement un lancement multiple :
 
 ![image](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/ac21e5fd-8e0a-4088-8651-0858ccd7b148)
 
-# Déploiement
+NServiceBus va s'appuyer sur le mode LearningTransport (pas besoin de RabbitMQ ici)
+
+# Déploiement ou Test en Release
+
+## RabbitMQ
+
+Faire tourner RabbitMQ via Docker.
+```
+docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+```
+
+Faire en sorte d'avoir une chaîne de connexion RabbitMQ
+- virtual host : `vhost-bhws`
+- user = `user-bhws` ayant accès au virtual host
+- password = `P@ssw0rd`
+
+```
+host=localhost:5672;username=user-bhws;password=p@ssw0rd;vhost=vhost-bhws
+```
+
+Note : des explications pour réaliser ce paramétrage pourront être ajoutées à ce document.
+
+## Service Windows
 
 Pour installer le service windows sur votre machine, rien de plus simple faire dans un terminal :
 -	WindowsService /Install
