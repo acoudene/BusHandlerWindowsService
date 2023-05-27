@@ -31,13 +31,15 @@ La solution du prototype est découpée en 7 projets :
 
 ![image](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/cb3d1df8-439d-47e7-828f-6fa3854898cf)
 
-# Debug
+# Test en Debug
 
 Pour tester, rien de plus simple, faire simplement un lancement multiple :
 
 ![image](https://github.com/acoudene/BusHandlerWindowsService/assets/12967802/ac21e5fd-8e0a-4088-8651-0858ccd7b148)
 
-# Déploiement
+NServiceBus va s'appuyer sur le mode LearningTransport (pas besoin de RabbitMQ ici)
+
+# Déploiement ou Test en Release
 
 ## RabbitMQ
 
