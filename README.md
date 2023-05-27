@@ -54,7 +54,7 @@ Faire en sorte d'avoir une chaîne de connexion RabbitMQ
 - password = `P@ssw0rd`
 
 ```
-host=localhost:5672;username=user-bhws;password=p@ssw0rd;vhost=vhost-bhws
+host=localhost:5672;username=user-bhws;password=p@ssw0rd;virtualhost=vhost-bhws
 ```
 
 Note : des explications pour réaliser ce paramétrage pourront être ajoutées à ce document.
