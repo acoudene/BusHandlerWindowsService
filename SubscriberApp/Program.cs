@@ -7,7 +7,15 @@ const string appName = "SubscriberApp";
 Console.Title = appName;
 
 var endpointConfiguration = new EndpointConfiguration(appName);
+#if DEBUG
 var transport = endpointConfiguration.UseTransport<LearningTransport>();
+#else
+endpointConfiguration.EnableInstallers();
+var transport = endpointConfiguration.UseTransport<RabbitMQTransport>();
+transport.UseConventionalRoutingTopology();
+transport.ConnectionString(@"host=localhost:5672;virtualhost=vhost-bhws;username=user-bhws;password=p@ssw0rd;");
+#endif
+
 var scanner = endpointConfiguration.AssemblyScanner();
 scanner.ExcludeTypes(typeof(OrderCreated));
 

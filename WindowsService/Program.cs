@@ -60,7 +60,14 @@ builder.Logging.AddConfiguration(
 const string appName = "WindowsService";
 
 var endpointConfiguration = new EndpointConfiguration(appName);
+#if DEBUG
 var transport = endpointConfiguration.UseTransport<LearningTransport>();
+#else
+endpointConfiguration.EnableInstallers();
+var transport = endpointConfiguration.UseTransport<RabbitMQTransport>();
+transport.UseConventionalRoutingTopology();
+transport.ConnectionString(@"host=localhost:5672;virtualhost=vhost-bhws;username=user-bhws;password=p@ssw0rd;");
+#endif
 
 var endpointInstance = await Endpoint.Start(endpointConfiguration)
     .ConfigureAwait(false);
