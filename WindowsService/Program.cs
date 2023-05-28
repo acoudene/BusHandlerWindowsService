@@ -7,12 +7,12 @@
 // WindowsService /Uninstall
 // <=>  sc stop ".NET Joke Service" + sc delete ".NET Joke Service"
 
+using CliWrap;
 using Microsoft.Extensions.Logging.Configuration;
 using Microsoft.Extensions.Logging.EventLog;
-using WindowsService;
-using CliWrap;
-using System.Net;
 using NServiceBus;
+using NServiceBus.Logging;
+using WindowsService;
 
 const string ServiceName = ".NET Joke Service";
 
@@ -27,15 +27,38 @@ if (args is { Length: 1 })
         .WithArguments(new[] { "create", ServiceName, $"binPath={executablePath}", "start=auto" })
         .ExecuteAsync();
   }
-  else if (args[0] is "/Uninstall")
+  else if (args[0] is "/Start")
+  {
+    await Cli.Wrap("sc")
+        .WithArguments(new[] { "start", ServiceName })
+        .ExecuteAsync();
+  }
+  else if (args[0] is "/Stop")
   {
     await Cli.Wrap("sc")
         .WithArguments(new[] { "stop", ServiceName })
         .ExecuteAsync();
-
+  }
+  else if (args[0] is "/Delete")
+  {
     await Cli.Wrap("sc")
         .WithArguments(new[] { "delete", ServiceName })
         .ExecuteAsync();
+  }
+  else if (args[0] is "/Uninstall")
+  {
+    try
+    {
+      await Cli.Wrap("sc")
+          .WithArguments(new[] { "stop", ServiceName })
+          .ExecuteAsync();
+    }
+    finally
+    {
+      await Cli.Wrap("sc")
+          .WithArguments(new[] { "delete", ServiceName })
+          .ExecuteAsync();
+    }
   }
 
   return;
@@ -63,6 +86,9 @@ var endpointConfiguration = new EndpointConfiguration(appName);
 #if DEBUG
 var transport = endpointConfiguration.UseTransport<LearningTransport>();
 #else
+ILoggerProvider loggerprovider = builder.Services.BuildServiceProvider().GetRequiredService<ILoggerProvider>();
+LogManager.UseFactory(new MicrosoftNServiceBusLoggerFactory(NServiceBus.Logging.LogLevel.Debug, loggerprovider));
+
 endpointConfiguration.EnableInstallers();
 var transport = endpointConfiguration.UseTransport<RabbitMQTransport>();
 transport.UseConventionalRoutingTopology();
