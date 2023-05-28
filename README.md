@@ -51,10 +51,10 @@ docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 -p 5672:567
 Faire en sorte d'avoir une chaîne de connexion RabbitMQ
 - virtual host : `vhost-bhws`
 - user = `user-bhws` ayant accès au virtual host
-- password = `P@ssw0rd`
+- password = `p@ssw0rd`
 
 ```
-host=localhost:5672;username=user-bhws;password=p@ssw0rd;vhost=vhost-bhws
+host=localhost:5672;username=user-bhws;password=p@ssw0rd;virtualhost=vhost-bhws
 ```
 
 Note : des explications pour réaliser ce paramétrage pourront être ajoutées à ce document.
